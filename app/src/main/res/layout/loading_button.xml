@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools">
+    <data>
+        <variable
+            name="buttonName"
+            type="java.lang.String" />
+        <variable
+            name="isLoading"
+            type="boolean" />
+        <variable
+            name="onButtonClick"
+            type="android.view.View.OnClickListener" />
+    </data>
+
+    <com.google.android.material.card.MaterialCardView
+        android:layout_width="175dp"
+        android:layout_height="48dp"
+        android:background="#121829"
+        app:cardCornerRadius="0dp">
+        <ProgressBar
+            android:layout_width="match_parent"
+            android:layout_height="48dp"
+            android:visibility="@{isLoading ? android.view.View.VISIBLE : android.view.View.GONE, default = gone}"
+            android:background="#121829"
+            android:layout_gravity="center"/>
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:id="@+id/btnDownload"
+            android:minHeight="48dp"
+            tools:text="Button name"
+            android:gravity="center"
+            android:textColor="#FFFFFF"
+            android:text="@{buttonName}"
+            android:textSize="20sp"
+            android:background="#121829"
+            android:textAllCaps="false"
+            android:layout_gravity="center"
+            android:visibility="@{isLoading ? android.view.View.GONE : android.view.View.VISIBLE, default = visible}"
+            android:onClick="@{(view) -> onButtonClick.onClick(view)}">
+        </TextView>
+    </com.google.android.material.card.MaterialCardView>
+</layout>

@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">WebViewToPdfApp</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="share">Share</string>
+    <string name="download">Download</string>
+
+</resources>
